@@ -68,9 +68,35 @@ table {
 body {
   background-color: #fcfcfc;
   color: #1f1313;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-family: "avenir next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+  padding-bottom: 1em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+p {
+  padding-bottom: 1em;
 }
 
 a {
@@ -95,7 +121,7 @@ a {
 .section-main,
 .width-wrapper {
   padding: 2.35765% 1.618em;
-  max-width: 700px;
+  max-width: 740px;
   margin: 0 auto;
   position: relative;
   height: 100%;
@@ -117,32 +143,53 @@ a {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(31, 19, 19, 0.8);
+  background-color: rgba(31, 19, 19, 0.3);
   content: "";
   display: block;
+}
+.header-main hgroup {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  margin-top: -200px;
 }
 
 .nav-main {
   position: absolute;
-  right: 1.618em;
-  bottom: 1.618em;
-  left: 1.618em;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: -webkit-linear-gradient(top, rgba(31, 19, 19, 0), #1f1313);
+  background-image: linear-gradient(to bottom, rgba(31, 19, 19, 0), #1f1313);
+  height: 3.75em;
+}
+.nav-main .width-wrapper {
+  padding: 0 1.618em;
+}
+.nav-main .width-wrapper::after {
   border-top: 1px solid rgba(252, 252, 252, 0.5);
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 1.618em;
+  left: 1.618em;
 }
 
 .nav-item {
   color: rgba(252, 252, 252, 0.5);
   display: inline-block;
   margin-right: 1.618em;
-  padding: 10px 10px;
+  padding: 0 12px;
   text-align: center;
+  height: 3em;
+  line-height: 3em;
+  text-transform: uppercase;
 }
 .nav-item.is-selected {
   border-top: 2px solid #fcfcfc;
   color: white;
   font-weight: bold;
   margin-top: -1px;
-  padding-top: 11px;
 }
 .nav-item:hover {
   color: #fcfcfc;

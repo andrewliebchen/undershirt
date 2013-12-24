@@ -5,18 +5,49 @@
 
 // VARIABLES move these
 $color-accent: #1DBA8F;
-$color-dark: #1F1313;
-$color-mid: #DDD;
-$color-light: #FCFCFC;
+$color-dark:   #1F1313;
+$color-mid:    #DDD;
+$color-light:  #FCFCFC;
 
-$max-content-width: 700px;
+$max-content-width: 740px;
+
+$small:  em(24);
+$medium: em(36);
+$large:  em(48);
+$xlarge: em(60);
 
 body {
   background-color: $color-light;
   color: $color-dark;
-  font-family: $helvetica;
-  font-size: 16px;
-  line-height: 24px;
+  font-family: 'avenir next', $helvetica;
+  font-size: 18px;
+  line-height: $small;
+}
+
+h1,
+h2, 
+h3,
+h4 {
+  font-weight: bold;
+  padding-bottom: 1em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: $large;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: $medium;
+}
+
+h3 {
+  font-size: $small;
+}
+
+p {
+  padding-bottom: 1em;
 }
 
 a {
@@ -49,24 +80,43 @@ a {
   &::before {
     @include position(absolute, 0px 0px 0px 0px);
     @include size(100%);
-    background-color: rgba($color-dark, 0.8);
+    background-color: rgba($color-dark, 0.3);
     content: "";
     display: block;
+  }
+
+  hgroup {
+    @include position(absolute, 50% 0 0 0);
+    text-align: center;
+    margin-top: -200px;
   }
 }
 
 .nav-main {
-  @include position(absolute, 0 $gutter $gutter $gutter);
-  border-top: 1px solid rgba($color-light, 0.5);
+  @include position(absolute, 0 0px 0px 0px);
+  @include background-image(linear-gradient(to bottom, rgba($color-dark, 0), $color-dark));
+  height: $xlarge;
+
+  .width-wrapper {
+    padding: 0 $gutter;
+
+    &::after {
+      border-top: 1px solid rgba($color-light, 0.5);
+      content: "";
+      @include position(absolute, 0px $gutter 0 $gutter);
+    }
+  }
 }
 
 .nav-item {
-  $padding-top: 10px;
   color: rgba($color-light, 0.5);
   display: inline-block;
   margin-right: $gutter;
-  padding: $padding-top 10px;
+  padding: 0 12px;
   text-align: center;
+  height: $large;
+  line-height: $large;
+  text-transform: uppercase;
 
   &.is-selected {
     $border-width: 2px;
@@ -75,7 +125,6 @@ a {
     color: white;
     font-weight: bold;
     margin-top: -($offset);
-    padding-top: $padding-top + $offset;
   }
 
   &:hover {
