@@ -156,42 +156,40 @@ a {
 
 .nav-main {
   position: absolute;
+  top: 0px;
   right: 0px;
-  bottom: 0px;
   left: 0px;
-  background-image: -webkit-linear-gradient(top, rgba(31, 19, 19, 0), #1f1313);
-  background-image: linear-gradient(to bottom, rgba(31, 19, 19, 0), #1f1313);
+  background-color: rgba(31, 19, 19, 0.2);
   height: 3.75em;
+  line-height: 3.75em;
 }
 .nav-main .width-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-orient: inline-axis;
+  -moz-box-orient: inline-axis;
+  box-orient: inline-axis;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
   padding: 0 1.618em;
-}
-.nav-main .width-wrapper::after {
-  border-top: 1px solid rgba(252, 252, 252, 0.5);
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 1.618em;
-  left: 1.618em;
 }
 
 .nav-item {
-  color: rgba(252, 252, 252, 0.5);
-  display: inline-block;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  color: rgba(252, 252, 252, 0.4);
+  display: block;
   margin-right: 1.618em;
-  padding: 0 12px;
   text-align: center;
-  height: 3em;
-  line-height: 3em;
   text-transform: uppercase;
 }
-.nav-item.is-selected {
-  border-top: 2px solid #fcfcfc;
-  color: white;
-  font-weight: bold;
-  margin-top: -1px;
-}
-.nav-item:hover {
+.nav-item:hover, .nav-item.is-selected {
   color: #fcfcfc;
 }
 

@@ -93,43 +93,33 @@ a {
 }
 
 .nav-main {
-  @include position(absolute, 0 0px 0px 0px);
-  @include background-image(linear-gradient(to bottom, rgba($color-dark, 0), $color-dark));
+  @include position(absolute, 0px 0px 0 0px);
+  background-color: rgba($color-dark, 0.2);
   height: $xlarge;
+  line-height: $xlarge;
 
   .width-wrapper {
+    @include box();
     padding: 0 $gutter;
-
-    &::after {
-      border-top: 1px solid rgba($color-light, 0.5);
-      content: "";
-      @include position(absolute, 0px $gutter 0 $gutter);
-    }
   }
 }
 
 .nav-item {
-  color: rgba($color-light, 0.5);
-  display: inline-block;
+  @include box-flex(1);
+  color: rgba($color-light, 0.4);
+  display: block;
   margin-right: $gutter;
-  padding: 0 12px;
   text-align: center;
-  height: $large;
-  line-height: $large;
   text-transform: uppercase;
 
+  &:hover,
   &.is-selected {
-    $border-width: 2px;
-    $offset: $border-width / 2;
-    border-top: $border-width solid $color-light;
-    color: white;
-    font-weight: bold;
-    margin-top: -($offset);
-  }
-
-  &:hover {
     color: $color-light;
   }
+
+  // &.is-selected {
+  //   box-shadow: 0 2px 0 $color-light;
+  // }
 }
 
 .section-main {
