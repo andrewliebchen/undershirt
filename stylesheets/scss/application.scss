@@ -28,22 +28,26 @@ h1,
 h2, 
 h3,
 h4 {
-  font-weight: bold;
   padding-bottom: 1em;
   line-height: 1.1;
 }
 
 h1 {
   font-size: $large;
-  font-weight: normal;
 }
 
 h2 {
   font-size: $medium;
+  font-weight: bold;
 }
 
 h3 {
   font-size: $small;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1em;
 }
 
 p {
@@ -116,15 +120,44 @@ a {
   &.is-selected {
     color: $color-light;
   }
-
-  // &.is-selected {
-  //   box-shadow: 0 2px 0 $color-light;
-  // }
 }
 
 .section-main {
   @extend %section;
   @extend %width-wrapper;
+}
+
+.timeline {
+  $timeline-width: em(6);
+  border-left: $timeline-width solid $color-mid;
+  padding-left: $gutter;
+
+  .timeline-item {
+    margin-bottom: $gutter;
+    
+    hgroup {
+      position: relative;
+      padding-bottom: 0.5em;
+
+      &::before {
+        $size: em(18);
+        $left: -$gutter;
+        @include position(absolute, 0px 0 0 $left);
+        @include size($size);
+        background-color: $color-mid;
+        border-radius: $size / 2;
+        box-shadow: 0 0 0 3px white;
+        content: "";
+        margin-top: ($small - $size) / 2;
+        margin-left: -($size / 2) - ($timeline-width / 2);
+      }
+    }
+
+    h3,
+    h4 {
+      padding-bottom: 0.25em;
+    }
+  }
 }
 
 .footer-main {

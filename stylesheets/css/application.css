@@ -77,22 +77,26 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: bold;
   padding-bottom: 1em;
   line-height: 1.1;
 }
 
 h1 {
   font-size: 3em;
-  font-weight: normal;
 }
 
 h2 {
   font-size: 2.25em;
+  font-weight: bold;
 }
 
 h3 {
   font-size: 1.5em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1em;
 }
 
 p {
@@ -191,6 +195,35 @@ a {
 }
 .nav-item:hover, .nav-item.is-selected {
   color: #fcfcfc;
+}
+
+.timeline {
+  border-left: 0.375em solid #dddddd;
+  padding-left: 1.618em;
+}
+.timeline .timeline-item {
+  margin-bottom: 1.618em;
+}
+.timeline .timeline-item hgroup {
+  position: relative;
+  padding-bottom: 0.5em;
+}
+.timeline .timeline-item hgroup::before {
+  position: absolute;
+  top: 0px;
+  left: -1.618em;
+  width: 1.125em;
+  height: 1.125em;
+  background-color: #dddddd;
+  border-radius: 0.5625em;
+  box-shadow: 0 0 0 3px white;
+  content: "";
+  margin-top: 0.1875em;
+  margin-left: -0.75em;
+}
+.timeline .timeline-item h3,
+.timeline .timeline-item h4 {
+  padding-bottom: 0.25em;
 }
 
 .footer-main {
