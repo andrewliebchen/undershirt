@@ -20,6 +20,17 @@ $xlarge: em(60);
 
 $timeline-width: em(6);
 
+// MIXINS
+@mixin cursor-zoom-in {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+@mixin vertical-center($height) {
+  height: $height;
+  line-height: $height;
+}
+
 body {
   background-color: $color-light;
   color: $color-dark;
@@ -115,19 +126,18 @@ button {
     display: block;
   }
 
-  // NEED A BETTER SOLUTION FOR CENTERING THIS
   hgroup {
-    @include position(absolute, 50% 0 0 0);
+    @include position(absolute, $xlarge 0px 0px 0px);
     text-align: center;
-    margin-top: -100px;
+    margin: auto;
+    @include size($max-content-width 50%);
   }
 }
 
 .nav-main {
   @include position(absolute, 0px 0px 0 0px);
+  @include vertical-center($xlarge);
   background-color: rgba($color-dark, 0.2);
-  height: $xlarge;
-  line-height: $xlarge;
 
   .width-wrapper {
     @include box();
@@ -186,31 +196,25 @@ button {
     }
   }
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    background-image: url("../../images/build/laptop.svg");
-    background-repeat: no-repeat;
-    margin: 1em auto;
-    padding: 4.8% 12.3647604% 6.1823802%;
-    background-size: 100% auto;
-  }
-
   button {
     @include fill-parent;
   }
 }
 
 .timeline-thumbnail {
-  @include row();
+  @include cursor-zoom-in;
   display: block;
-  background-color: white;
-  border: 1px solid $color-mid;
-  border-radius: 5px;
-  padding: em(10);
-  margin-bottom: $gutter;
+  margin: 1em auto;
 
+  img {
+    background-image: url("../../images/build/laptop.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 4.8% 12.3647604% 6.1823802%;
+  }
 }
 
 .footer-main {

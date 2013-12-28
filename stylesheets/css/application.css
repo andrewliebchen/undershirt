@@ -178,9 +178,14 @@ button:hover {
 }
 .header-main hgroup {
   position: absolute;
-  top: 50%;
+  top: 3.75em;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
   text-align: center;
-  margin-top: -100px;
+  margin: auto;
+  width: 740px;
+  height: 50%;
 }
 
 .nav-main {
@@ -188,9 +193,9 @@ button:hover {
   top: 0px;
   right: 0px;
   left: 0px;
-  background-color: rgba(31, 19, 19, 0.2);
   height: 3.75em;
   line-height: 3.75em;
+  background-color: rgba(31, 19, 19, 0.2);
 }
 .nav-main .width-wrapper {
   display: -webkit-box;
@@ -260,36 +265,24 @@ button:hover {
 .timeline-item hgroup h4 {
   padding-bottom: 0.25em;
 }
-.timeline-item img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  background-image: url("../../images/build/laptop.svg");
-  background-repeat: no-repeat;
-  margin: 1em auto;
-  padding: 4.8% 12.3647604% 6.1823802%;
-  background-size: 100% auto;
-}
 .timeline-item button {
   width: 100%;
 }
 
 .timeline-thumbnail {
-  *zoom: 1;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
   display: block;
+  margin: 1em auto;
+}
+.timeline-thumbnail img {
+  background-image: url("../../images/build/laptop.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   display: block;
-  background-color: white;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  padding: 0.625em;
-  margin-bottom: 1.618em;
-}
-.timeline-thumbnail:before, .timeline-thumbnail:after {
-  content: " ";
-  display: table;
-}
-.timeline-thumbnail:after {
-  clear: both;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 4.8% 12.3647604% 6.1823802%;
 }
 
 .footer-main {
