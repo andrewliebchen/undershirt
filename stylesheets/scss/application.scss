@@ -159,6 +159,7 @@ button {
 }
 
 .timeline-item {
+  @include row();
   margin-bottom: $gutter * 2;
 
   hgroup {
@@ -183,6 +184,17 @@ button {
       padding-bottom: 0.25em;
     }
   }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 1em auto;
+  }
+
+  button {
+    @include fill-parent;
+  }
 }
 
 .timeline-thumbnail {
@@ -194,18 +206,6 @@ button {
   padding: em(10);
   margin-bottom: $gutter;
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    // border: 1px solid $color-mid;
-    margin-bottom: 1em;
-    margin: 0 auto;
-  }
-
-  button {
-    @include fill-parent;
-  }
 }
 
 .footer-main {

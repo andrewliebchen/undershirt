@@ -228,7 +228,16 @@ button:hover {
 }
 
 .timeline-item {
+  *zoom: 1;
+  display: block;
   margin-bottom: 3.236em;
+}
+.timeline-item:before, .timeline-item:after {
+  content: " ";
+  display: table;
+}
+.timeline-item:after {
+  clear: both;
 }
 .timeline-item hgroup {
   position: relative;
@@ -251,6 +260,15 @@ button:hover {
 .timeline-item hgroup h4 {
   padding-bottom: 0.25em;
 }
+.timeline-item img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 1em auto;
+}
+.timeline-item button {
+  width: 100%;
+}
 
 .timeline-thumbnail {
   *zoom: 1;
@@ -268,16 +286,6 @@ button:hover {
 }
 .timeline-thumbnail:after {
   clear: both;
-}
-.timeline-thumbnail img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  margin-bottom: 1em;
-  margin: 0 auto;
-}
-.timeline-thumbnail button {
-  width: 100%;
 }
 
 .footer-main {
