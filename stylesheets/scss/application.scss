@@ -100,7 +100,7 @@ button {
 
 .header-main {
   @extend %section;
-  background-image: url("../../images/background.jpg");
+  background-image: url("../../images/build/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: $color-light;
@@ -115,10 +115,11 @@ button {
     display: block;
   }
 
+  // NEED A BETTER SOLUTION FOR CENTERING THIS
   hgroup {
     @include position(absolute, 50% 0 0 0);
     text-align: center;
-    margin-top: -200px;
+    margin-top: -100px;
   }
 }
 
@@ -189,7 +190,11 @@ button {
     max-width: 100%;
     max-height: 100%;
     display: block;
+    background-image: url("../../images/build/laptop.svg");
+    background-repeat: no-repeat;
     margin: 1em auto;
+    padding: 4.8% 12.3647604% 6.1823802%;
+    background-size: 100% auto;
   }
 
   button {

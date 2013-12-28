@@ -157,7 +157,7 @@ button:hover {
 }
 
 .header-main {
-  background-image: url("../../images/background.jpg");
+  background-image: url("../../images/build/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: #fcfcfc;
@@ -180,7 +180,7 @@ button:hover {
   position: absolute;
   top: 50%;
   text-align: center;
-  margin-top: -200px;
+  margin-top: -100px;
 }
 
 .nav-main {
@@ -264,7 +264,11 @@ button:hover {
   max-width: 100%;
   max-height: 100%;
   display: block;
+  background-image: url("../../images/build/laptop.svg");
+  background-repeat: no-repeat;
   margin: 1em auto;
+  padding: 4.8% 12.3647604% 6.1823802%;
+  background-size: 100% auto;
 }
 .timeline-item button {
   width: 100%;
