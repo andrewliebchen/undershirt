@@ -65,6 +65,39 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  font-family: fontastic;
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../fonts/fontastic/undershirt.eot");
+  src: url("../../fonts/fontastic/undershirt.eot?#iefix") format("embedded-opentype"), url("../../fonts/fontastic/undershirt.woff") format("woff"), url("../../fonts/fontastic/undershirt.ttf") format("truetype"), url("../../fonts/fontastic/undershirt.svg#fontastic") format("svg");
+}
+
+[data-icon]::before {
+  font-family: fontastic;
+  color: inherit;
+}
+
+[data-icon="twitter"]::before {
+  content: "\E000";
+}
+
+[data-icon="dribbble"]::before {
+  content: "\E001";
+}
+
+[data-icon="github"]::before {
+  content: "\E002";
+}
+
+[data-icon="linkedin"]::before {
+  content: "\E003";
+}
+
+[data-icon="email"]::before {
+  content: "\E004";
+}
+
 body {
   background-color: #fcfcfc;
   color: #1f1313;

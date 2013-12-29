@@ -3,6 +3,8 @@
 @import "neat/neat";
 @import "reset";
 
+@include font-face(fontastic, '../../fonts/fontastic/undershirt');
+
 // VARIABLES move these
 $color-accent: #1DBA8F;
 $color-dark:   #1F1313;
@@ -12,6 +14,7 @@ $color-light:  #FCFCFC;
 $max-content-width: 740px;
 
 $font-base: 'avenir next', $helvetica;
+$font-icon: fontastic;
 
 $small:  em(24);
 $medium: em(36);
@@ -29,6 +32,32 @@ $timeline-width: em(6);
 @mixin vertical-center($height) {
   height: $height;
   line-height: $height;
+}
+
+// ICONS
+[data-icon]::before {
+  font-family: $font-icon;
+  color: inherit;
+}
+
+[data-icon="twitter"]::before {
+  content: "\E000";
+}
+
+[data-icon="dribbble"]::before {
+  content: "\E001";
+}
+
+[data-icon="github"]::before {
+  content: "\E002";
+}
+
+[data-icon="linkedin"]::before {
+  content: "\E003";
+}
+
+[data-icon="email"]::before {
+  content: "\E004";
 }
 
 body {
