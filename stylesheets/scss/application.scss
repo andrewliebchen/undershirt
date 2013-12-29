@@ -111,12 +111,12 @@ button {
 
 .header-main {
   @extend %section;
+  @include position(relative, 0px 0 0 0px);
+  @include size(100% 100vh);
   background-image: url("../../images/build/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: $color-light;
-  @include size(100% 99vh);
-  @include position(relative, 0px 0 0 0px);
   z-index: 999;
 
   &::before {
