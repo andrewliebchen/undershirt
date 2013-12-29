@@ -175,21 +175,6 @@ button:hover, input[type="submit"]:hover {
   color: #fcfcfc;
 }
 
-.header-main, .section-main, .footer-main {
-  *zoom: 1;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.header-main:before, .section-main:before, .footer-main:before, .header-main:after, .section-main:after, .footer-main:after {
-  content: " ";
-  display: table;
-}
-.header-main:after, .section-main:after, .footer-main:after {
-  clear: both;
-}
-
-.section-main,
 .width-wrapper {
   padding: 2.35765% 1.618em;
   max-width: 740px;
@@ -199,6 +184,10 @@ button:hover, input[type="submit"]:hover {
 }
 
 .header-main {
+  *zoom: 1;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   top: 0px;
   left: 0px;
@@ -209,6 +198,13 @@ button:hover, input[type="submit"]:hover {
   background-size: cover;
   color: #fcfcfc;
   z-index: 999;
+}
+.header-main:before, .header-main:after {
+  content: " ";
+  display: table;
+}
+.header-main:after {
+  clear: both;
 }
 .header-main::before {
   position: absolute;
@@ -271,6 +267,20 @@ button:hover, input[type="submit"]:hover {
   height: 3.75em;
 }
 
+.section-main {
+  *zoom: 1;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-main:before, .section-main:after {
+  content: " ";
+  display: table;
+}
+.section-main:after {
+  clear: both;
+}
+
 .timeline {
   border-left: 0.375em solid #dddddd;
   padding: 1.618em 0 0 1.618em;
@@ -330,8 +340,19 @@ button:hover, input[type="submit"]:hover {
 }
 
 .footer-main {
+  *zoom: 1;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #dddddd;
   color: #919191;
+}
+.footer-main:before, .footer-main:after {
+  content: " ";
+  display: table;
+}
+.footer-main:after {
+  clear: both;
 }
 
 .contact-modal {

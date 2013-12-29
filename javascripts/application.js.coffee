@@ -11,12 +11,14 @@ $ ->
         "top": "-#{headerPosition}px"
       )
       $('.nav-main').clone().appendTo('.scrolling-header')
+      $('.section-main').css "margin-top", "#{headerPosition}px"
     postFixed: ->
       HEADER.css(
         'position':  'relative',
         'top': '0px'
       )
       $('.scrolling-header .nav-main').remove()
+      $('.section-main').css "margin-top", "0"
   )
 
   $(document).on 'click', '[data-toggle]', (event) ->

@@ -134,10 +134,6 @@ button {
   }
 }
 
-%section {
-  @include outer-container;
-}
-
 %width-wrapper,
 .width-wrapper {
   @include pad(default $gutter);
@@ -148,7 +144,7 @@ button {
 }
 
 .header-main {
-  @extend %section;
+  @include outer-container;
   @include position(relative, 0px 0 0 0px);
   @include size(100% 99vh);
   background-image: url("../../images/build/background.jpg");
@@ -208,8 +204,7 @@ button {
 }
 
 .section-main {
-  @extend %section;
-  @extend %width-wrapper;
+  @include outer-container;
 }
 
 .timeline {
@@ -266,7 +261,7 @@ button {
 }
 
 .footer-main {
-  @extend %section;
+  @include outer-container;
   background-color: $color-mid;
   color: darken($color-mid, 30%);
 }
