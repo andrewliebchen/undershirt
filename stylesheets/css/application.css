@@ -109,6 +109,14 @@ a {
   color: #1dba8f;
 }
 
+.right {
+  float: right !important;
+}
+
+.left {
+  float: left !important;
+}
+
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -201,33 +209,23 @@ button:hover {
   line-height: 3.75em;
 }
 .nav-main .width-wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  -webkit-box-orient: inline-axis;
-  -moz-box-orient: inline-axis;
-  box-orient: inline-axis;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  box-pack: start;
-  -webkit-box-align: stretch;
-  -moz-box-align: stretch;
-  box-align: stretch;
   padding: 0 1.618em;
 }
 
 .nav-item {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
   color: rgba(252, 252, 252, 0.4);
   display: block;
-  margin-right: 1.618em;
+  float: left;
+  margin-left: 1.618em;
   text-align: center;
-  text-transform: uppercase;
+  font-size: 1.25em;
 }
-.nav-item:hover, .nav-item.is-selected {
+.nav-item:hover, .nav-item.is-selected, .nav-item.nav-title {
   color: #fcfcfc;
+}
+.nav-item.nav-title {
+  font-weight: bold;
+  margin-left: 0;
 }
 
 .scrolling-header {

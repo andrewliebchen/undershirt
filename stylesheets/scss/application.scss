@@ -75,6 +75,14 @@ a {
   color: $color-accent;
 }
 
+.right {
+  float: right !important;
+}
+
+.left {
+  float: left !important;
+}
+
 button {
   @include appearance(none);
   border: 2px solid $color-accent;
@@ -140,22 +148,27 @@ button {
   @include vertical-center($xlarge);
 
   .width-wrapper {
-    @include box();
     padding: 0 $gutter;
   }
 }
 
 .nav-item {
-  @include box-flex(1);
   color: rgba($color-light, 0.4);
   display: block;
-  margin-right: $gutter;
+  float: left;
+  margin-left: $gutter;
   text-align: center;
-  text-transform: uppercase;
+  font-size: em(20);
 
   &:hover,
-  &.is-selected {
+  &.is-selected,
+  &.nav-title {
     color: $color-light;
+  }
+
+  &.nav-title {
+    font-weight: bold;
+    margin-left: 0;
   }
 }
 
