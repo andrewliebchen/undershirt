@@ -524,7 +524,7 @@
   $(function() {
     var HEADER;
     HEADER = $('.header-main');
-    return $('.scrolling-header').scrollToFixed({
+    $('.scrolling-header').scrollToFixed({
       preFixed: function() {
         var headerHeight, headerPosition, scrollingHeaderHeight;
         headerHeight = HEADER.height();
@@ -543,6 +543,12 @@
         });
         return $('.scrolling-header .nav-main').remove();
       }
+    });
+    return $(document).on('click', '[data-toggle]', function(event) {
+      var target;
+      target = $($(this).data('toggle'));
+      event.preventDefault();
+      return target.toggle();
     });
   });
 

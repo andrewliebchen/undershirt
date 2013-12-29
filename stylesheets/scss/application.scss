@@ -73,6 +73,7 @@ p {
 a {
   text-decoration: none;
   color: $color-accent;
+  cursor: pointer;
 }
 
 .right {
@@ -120,7 +121,7 @@ button {
 .header-main {
   @extend %section;
   @include position(relative, 0px 0 0 0px);
-  @include size(100% 100vh);
+  @include size(100% 99vh);
   background-image: url("../../images/build/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -239,4 +240,44 @@ button {
   @extend %section;
   background-color: $color-mid;
   color: darken($color-mid, 30%);
+}
+
+.contact-modal {
+  $width: 600px;
+  @include pad(default);
+  @include position(fixed, 100px 0 0 50%);
+  background-color: $color-light;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(black, 0.2);
+  display: none;
+  margin-left: -($width / 2);
+  width: $width;
+  z-index: 9999;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  @include fill-parent;
+  background-color: $color-light;
+  border-radius: 5px;
+  border: 2px solid $color-mid;
+  color: $color-dark;
+  display: block;
+  margin-bottom: em(12);
+  padding: em(6);
+
+  @include placeholder {
+    color: darken($color-mid, 10%);
+  }
+
+  &:focus {
+    border-color: $color-accent;
+    box-shadow: 0 0 5px rgba($color-accent, 0.6);
+  }
+}
+
+input[type="submit"] {
+  @extend button;
+  float: right;
 }

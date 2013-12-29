@@ -18,3 +18,9 @@ $ ->
       )
       $('.scrolling-header .nav-main').remove()
   )
+
+  $(document).on 'click', '[data-toggle]', (event) ->
+    target = $($(@).data('toggle'))
+    event.preventDefault()
+    target.toggle()
+
