@@ -519,31 +519,3 @@
         });
     };
 })(jQuery);
-
-(function() {
-  $(function() {
-    var HEADER;
-    HEADER = $('.header-main');
-    return $('.scrolling-header').scrollToFixed({
-      preFixed: function() {
-        var headerHeight, headerPosition, scrollingHeaderHeight;
-        headerHeight = HEADER.height();
-        scrollingHeaderHeight = $('.scrolling-header').height();
-        headerPosition = headerHeight - scrollingHeaderHeight;
-        HEADER.css({
-          "position": "fixed",
-          "top": "-" + headerPosition + "px"
-        });
-        return $('.nav-main').clone().appendTo('.scrolling-header');
-      },
-      postFixed: function() {
-        HEADER.css({
-          'position': 'relative',
-          'top': '0px'
-        });
-        return $('.scrolling-header .nav-main').remove();
-      }
-    });
-  });
-
-}).call(this);

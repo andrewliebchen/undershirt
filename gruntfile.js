@@ -3,6 +3,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    coffee: {
+      compile: {
+        files: {
+          'javascripts/application.js': 'javascripts/application.js.coffee' // 1:1 compile
+        }
+      }
+    },
+
     concat: {
       dist: {
         src: [
@@ -43,6 +51,11 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      coffee: {
+        files: ['javascripts/*.coffee'],
+        tasks: 'coffee'
+      },
+
       scripts: {
         files: ['javascripts/*.js'],
         tasks: ['concat', 'uglify'],
@@ -62,6 +75,7 @@ module.exports = function(grunt) {
   });
 
   // 3. Where we tell Grunt we plan to use this plug-in.
+  grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -69,5 +83,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass', 'watch']);
+  grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'imagemin', 'sass', 'watch']);
 };

@@ -115,8 +115,9 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   color: $color-light;
-  height: 99vh;
-  position: relative;
+  @include size(100% 99vh);
+  @include position(relative, 0px 0 0 0px);
+  z-index: 999;
 
   &::before {
     @include position(absolute, 0px 0px 0px 0px);
@@ -137,7 +138,6 @@ button {
 .nav-main {
   @include position(absolute, 0px 0px 0 0px);
   @include vertical-center($xlarge);
-  background-color: rgba($color-dark, 0.2);
 
   .width-wrapper {
     @include box();
@@ -157,6 +157,11 @@ button {
   &.is-selected {
     color: $color-light;
   }
+}
+
+.scrolling-header {
+  @include position(absolute, 0 0px 0px 0px);
+  @include size(100% $xlarge);
 }
 
 .section-main {
