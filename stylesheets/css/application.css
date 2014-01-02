@@ -319,7 +319,7 @@ pre[class*="language-"] {
 body {
   background-color: #fcfcfc;
   color: #1f1313;
-  font-family: "avenir next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.5em;
 }
@@ -371,6 +371,12 @@ a {
   color: #1dba8f;
   cursor: pointer;
   text-decoration: none;
+}
+article a, .footer-main a {
+  font-weight: bold;
+}
+article a:hover, .footer-main a:hover {
+  text-decoration: underline;
 }
 
 strong {
@@ -430,7 +436,7 @@ button {
   color: #1dba8f;
   cursor: pointer;
   display: inline-block;
-  font-family: "avenir next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   height: 2.375em;
   line-height: 2.25em;

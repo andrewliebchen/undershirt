@@ -14,7 +14,7 @@ $color-light:  #FCFCFC;
 
 $max-content-width: 740px;
 
-$font-base: 'avenir next', $helvetica;
+$font-base: 'avenir next', avenir, $helvetica;
 $font-icon: fontastic;
 
 $xsmall: em(12);
@@ -146,6 +146,15 @@ a {
   color: $color-accent;
   cursor: pointer;
   text-decoration: none;
+
+  article &,
+  .footer-main & {
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 strong {
