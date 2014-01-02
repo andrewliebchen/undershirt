@@ -8,8 +8,8 @@
 
 // VARIABLES move these
 $color-accent: #1DBA8F;
-$color-dark:   #1F1313;
-$color-mid:    lighten($color-dark, 85%);;
+$color-dark:   #333;
+$color-mid:    lighten($color-dark, 75%);
 $color-light:  #FCFCFC;
 
 $max-content-width: 740px;
@@ -140,6 +140,10 @@ pre[class*="language-"] {
   background-color: $color-mid;
   border-radius: 3px;
   margin: 0 0 1em;
+
+  code {
+    text-shadow: none;
+  }
 }
 
 a {
@@ -246,7 +250,7 @@ button {
   width: $width;
   padding: 10px;
   font-size: 0.8em;
-  background-color: rgba($color-dark, 0.7);
+  background-color: $color-dark;
   line-height: $small;
   text-align: center;
   border-radius: 3px;

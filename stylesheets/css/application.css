@@ -318,7 +318,7 @@ pre[class*="language-"] {
 
 body {
   background-color: #fcfcfc;
-  color: #1f1313;
+  color: #333333;
   font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.5em;
@@ -362,9 +362,12 @@ small, figure figcaption, blockquote {
 }
 
 pre[class*="language-"] {
-  background-color: #f5efef;
+  background-color: #f2f2f2;
   border-radius: 3px;
   margin: 0 0 1em;
+}
+pre[class*="language-"] code {
+  text-shadow: none;
 }
 
 a {
@@ -398,7 +401,7 @@ figure figcaption {
 }
 
 blockquote {
-  border-left: 3px solid #f5efef;
+  border-left: 3px solid #f2f2f2;
   margin-bottom: 1em;
   padding-left: 1em;
 }
@@ -469,7 +472,7 @@ button:hover {
   width: 100px;
   padding: 10px;
   font-size: 0.8em;
-  background-color: rgba(31, 19, 19, 0.7);
+  background-color: #333333;
   line-height: 1.5em;
   text-align: center;
   border-radius: 3px;
@@ -535,7 +538,7 @@ button:hover {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(31, 19, 19, 0.3);
+  background-color: rgba(51, 51, 51, 0.3);
   content: "";
   display: block;
 }
@@ -629,7 +632,7 @@ button:hover {
   top: 50%;
   width: 2.25em;
   height: 2.25em;
-  background-color: #f5efef;
+  background-color: #f2f2f2;
   border-radius: 1.125em;
   color: #fcfcfc;
   display: block;
@@ -644,7 +647,7 @@ button:hover {
   left: 1px;
 }
 .pagination a:hover {
-  background-color: #1f1313;
+  background-color: #333333;
 }
 
 .is-scrolling .pagination-prev, .is-scrolling
@@ -680,8 +683,8 @@ button:hover {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #f5efef;
-  color: #a77070;
+  background-color: #f2f2f2;
+  color: #8c8c8c;
 }
 .footer-main:before, .footer-main:after {
   content: " ";
