@@ -122,6 +122,12 @@ p {
   padding-bottom: 1em;
 }
 
+small {
+  color: #999;
+  font-size: em(14);
+  font-style: italic;
+}
+
 pre[class*="language-"] {
   background-color: $color-mid;
   border-radius: 3px;
@@ -149,10 +155,34 @@ figure {
   }
 
   figcaption {
-    color: #999;
-    font-size: em(14);
-    font-style: italic;
+    @extend small;
     padding-top: 0.5em;
+  }
+}
+
+blockquote {
+  @extend small;
+  border-left: 3px solid $color-mid;
+  margin-bottom: 1em;
+  padding-left: 1em;
+}
+
+ul,
+ol {
+  article & {
+    padding: 0 0 1em 3em;
+  }
+}
+
+ul {
+  article & {
+    list-style: disc;
+  }
+}
+
+ol {
+  article & {
+    list-style: decimal;
   }
 }
 
