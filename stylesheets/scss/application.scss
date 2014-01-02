@@ -80,7 +80,15 @@ $timeline-width: em(6);
 }
 
 [data-icon="email"]::before {
+  content: "\E004";
+}
+
+[data-icon="right"]::before {
   content: "\E005";
+}
+
+[data-icon="left"]::before {
+  content: "\E006";
 }
 
 body {
@@ -283,8 +291,10 @@ button {
     margin: auto;
     text-align: center;
   }
+}
 
-  &.is-scrolling {
+.is-scrolling {
+  .header-main {
     hgroup {
       display: none;
     }
@@ -338,6 +348,49 @@ button {
   p:first-of-type {
     font-size: em(20);
   }
+}
+
+.pagination {
+  a {
+    $size: $medium;
+    @include transition;
+    @include position(fixed, 50% 0 0 0);
+    @include size($size);
+    background-color: $color-mid;
+    border-radius: $size / 2;
+    color: $color-light;
+    display: block;
+    line-height: $size;
+    margin-top: -($size / 2);
+    opacity: 0;
+    text-align: center;
+
+    &::before {
+      @include position(relative, 1px 0 0 1px); 
+    }
+
+    &:hover {
+      background-color: $color-dark;
+    }
+  }
+}
+
+.pagination-prev,
+.pagination-next {
+  .is-scrolling & {
+    @include transform(translateX(0));
+    opacity: 1;
+  }
+}
+
+.pagination-prev {
+  @include transform(translateX(-100px));
+  left: $small;
+}
+
+.pagination-next {
+  @include transform(translateX(100px));
+  right: $small;
 }
 
 .footer-main {

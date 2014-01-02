@@ -11,7 +11,8 @@
         HEADER.css({
           "position": "fixed",
           "top": "-" + headerPosition + "px"
-        }).addClass('is-scrolling');
+        });
+        $('body').addClass('is-scrolling');
         $('.nav-main').clone().appendTo('.scrolling-header');
         return $('.section-main').css("margin-top", "" + (headerPosition + 30) + "px");
       },
@@ -19,7 +20,8 @@
         HEADER.css({
           'position': 'relative',
           'top': '0px'
-        }).removeClass('is-scrolling');
+        });
+        $('body').removeClass('is-scrolling');
         $('.scrolling-header .nav-main').remove();
         return $('.section-main').css("margin-top", "0");
       }

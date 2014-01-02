@@ -9,14 +9,16 @@ $ ->
       HEADER.css(
         "position": "fixed",
         "top": "-#{headerPosition}px"
-      ).addClass('is-scrolling')
+      )
+      $('body').addClass('is-scrolling')
       $('.nav-main').clone().appendTo('.scrolling-header')
       $('.section-main').css "margin-top", "#{headerPosition + 30}px"
     postFixed: ->
       HEADER.css(
         'position':  'relative',
         'top': '0px'
-      ).removeClass('is-scrolling')
+      )
+      $('body').removeClass('is-scrolling')
       $('.scrolling-header .nav-main').remove()
       $('.section-main').css "margin-top", "0"
   )
