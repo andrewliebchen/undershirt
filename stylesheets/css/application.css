@@ -243,6 +243,54 @@ pre[class*="language-"] {
   }
 }
 
+@-webkit-keyframes tooltip-pagination {
+  from {
+    -webkit-transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes tooltip-pagination {
+  from {
+    -moz-transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    -moz-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-o-keyframes tooltip-pagination {
+  from {
+    -o-transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    -o-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tooltip-pagination {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes nav-drop {
   from {
     -webkit-transform: translateY(-3.75em);
@@ -456,9 +504,6 @@ button:hover {
 }
 
 .tooltip {
-  position: absolute;
-  top: 75%;
-  left: 50%;
   -webkit-animation-name: tooltip-drop;
   -moz-animation-name: tooltip-drop;
   animation-name: tooltip-drop;
@@ -468,14 +513,17 @@ button:hover {
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  margin-left: -50px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
   width: 100px;
-  padding: 10px;
-  font-size: 0.8em;
+  height: 3em;
   background-color: #333333;
-  line-height: 1.5em;
-  text-align: center;
   border-radius: 3px;
+  font-size: 0.8em;
+  line-height: 3em;
+  margin-left: -50px;
+  text-align: center;
 }
 
 .media {
@@ -640,6 +688,7 @@ button:hover {
   margin-top: -1.125em;
   opacity: 0;
   text-align: center;
+  z-index: 2;
 }
 .pagination a::before {
   position: relative;
@@ -648,6 +697,24 @@ button:hover {
 }
 .pagination a:hover {
   background-color: #333333;
+}
+.pagination .tooltip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 400px;
+  height: 2.25em;
+  -webkit-animation-name: tooltip-pagination;
+  -moz-animation-name: tooltip-pagination;
+  animation-name: tooltip-pagination;
+  border-radius: 1.5em;
+  font-size: 1em;
+  line-height: 2.25em;
+  margin-top: -1.125em;
+  padding: 0 1.5em;
+  text-align: left;
+  top: 50%;
+  z-index: -1;
 }
 
 .is-scrolling .pagination-prev, .is-scrolling
@@ -668,6 +735,16 @@ button:hover {
   transform: translateX(-100px);
   left: 1.5em;
 }
+.pagination-prev .tooltip {
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -ms-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+  left: 3em;
+  padding-left: 2.25em;
+  right: auto;
+}
 
 .pagination-next {
   -webkit-transform: translateX(100px);
@@ -676,6 +753,16 @@ button:hover {
   -o-transform: translateX(100px);
   transform: translateX(100px);
   right: 1.5em;
+}
+.pagination-next .tooltip {
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transform-origin: right center;
+  left: auto;
+  padding-right: 2.25em;
+  right: 0;
 }
 
 .footer-main {
