@@ -9,14 +9,14 @@ $ ->
       HEADER.css(
         "position": "fixed",
         "top": "-#{headerPosition}px"
-      )
+      ).addClass('is-scrolling')
       $('.nav-main').clone().appendTo('.scrolling-header')
-      $('.section-main').css "margin-top", "#{headerPosition}px"
+      $('.section-main').css "margin-top", "#{headerPosition + 30}px"
     postFixed: ->
       HEADER.css(
         'position':  'relative',
         'top': '0px'
-      )
+      ).removeClass('is-scrolling')
       $('.scrolling-header .nav-main').remove()
       $('.section-main').css "margin-top", "0"
   )
@@ -34,5 +34,10 @@ $ ->
   $(document).on 'mouseleave', '[data-title]', (event) ->
     event.preventDefault()
     $(@).find('.tooltip').remove()
+
+  $(window).scroll ->
+    scrollPosition = $(window).scrollTop()
+    parallaxYPos = scrollPosition * 0.08
+    HEADER.find('hgroup').css 'top', "#{parallaxYPos}%"
 
 

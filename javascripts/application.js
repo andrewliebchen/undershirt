@@ -11,15 +11,15 @@
         HEADER.css({
           "position": "fixed",
           "top": "-" + headerPosition + "px"
-        });
+        }).addClass('is-scrolling');
         $('.nav-main').clone().appendTo('.scrolling-header');
-        return $('.section-main').css("margin-top", "" + headerPosition + "px");
+        return $('.section-main').css("margin-top", "" + (headerPosition + 30) + "px");
       },
       postFixed: function() {
         HEADER.css({
           'position': 'relative',
           'top': '0px'
-        });
+        }).removeClass('is-scrolling');
         $('.scrolling-header .nav-main').remove();
         return $('.section-main').css("margin-top", "0");
       }
@@ -36,9 +36,15 @@
       event.preventDefault();
       return $(this).append("<span class='tooltip'>" + titleText + "</span>");
     });
-    return $(document).on('mouseleave', '[data-title]', function(event) {
+    $(document).on('mouseleave', '[data-title]', function(event) {
       event.preventDefault();
       return $(this).find('.tooltip').remove();
+    });
+    return $(window).scroll(function() {
+      var parallaxYPos, scrollPosition;
+      scrollPosition = $(window).scrollTop();
+      parallaxYPos = scrollPosition * 0.08;
+      return HEADER.find('hgroup').css('top', "" + parallaxYPos + "%");
     });
   });
 

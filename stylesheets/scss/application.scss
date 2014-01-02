@@ -237,6 +237,12 @@ button {
     margin: auto;
     text-align: center;
   }
+
+  &.is-scrolling {
+    hgroup {
+      display: none;
+    }
+  }
 }
 
 .nav-main {

@@ -491,6 +491,9 @@ button:hover {
   margin: auto;
   text-align: center;
 }
+.header-main.is-scrolling hgroup {
+  display: none;
+}
 
 .nav-main {
   position: absolute;
