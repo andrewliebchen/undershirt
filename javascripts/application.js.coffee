@@ -25,4 +25,3 @@ $ ->
     target = $($(@).data('toggle'))
     event.preventDefault()
     target.toggle()
-

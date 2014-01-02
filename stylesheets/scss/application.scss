@@ -47,8 +47,8 @@ $timeline-width: em(6);
 
 // ICONS
 [data-icon]::before {
-  font-family: $font-icon;
   color: inherit;
+  font-family: $font-icon;
 }
 
 [data-icon="twitter"]::before {
@@ -83,8 +83,8 @@ h1,
 h2, 
 h3,
 h4 {
-  padding-bottom: 1em;
   line-height: 1.1;
+  padding-bottom: 1em;
 }
 
 h1 {
@@ -111,19 +111,37 @@ p {
 }
 
 pre[class*="language-"] {
-  margin: 0 0 1em;
   background-color: $color-mid;
   border-radius: 3px;
+  margin: 0 0 1em;
 }
 
 a {
-  text-decoration: none;
   color: $color-accent;
   cursor: pointer;
+  text-decoration: none;
 }
 
 strong {
   font-weight: bold;
+}
+
+figure {
+  margin-bottom: 1em;
+
+  img {
+    @include size(100% auto);
+    border-radius: 3px;
+    display: block;
+    overflow: hidden;
+  }
+
+  figcaption {
+    color: #999;
+    font-size: em(14);
+    font-style: italic;
+    padding-top: 0.5em;
+  }
 }
 
 .right {
@@ -136,18 +154,18 @@ strong {
 
 button {
   @include appearance(none);
+  background-color: transparent;
+  border-radius: 5px;
   border: 2px solid $color-accent;
   color: $color-accent;
-  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-base;
+  font-size: 1em;
   height: $medium + em(2);
   line-height: $medium;
-  display: inline-block;
   padding: 0 $small;
-  font-size: 1em;
-  background-color: transparent;
   text-align: center;
-  font-family: $font-base;
-  cursor: pointer;
 
   &:hover {
     background-color: $color-accent;
@@ -158,17 +176,17 @@ button {
 %width-wrapper,
 .width-wrapper {
   @include pad(default $gutter);
-  max-width: $max-content-width;
-  margin: 0 auto;
-  position: relative;
   height: 100%;
+  margin: 0 auto;
+  max-width: $max-content-width;
+  position: relative;
 }
 
 .header-main {
   @include outer-container;
   @include position(relative, 0px 0 0 0px);
   @include size(100% 95vh);
-  background-image: url("../../images/background.jpg");
+  background-image: url("../../images/background2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: $color-light;
@@ -184,9 +202,9 @@ button {
 
   hgroup {
     @include position(absolute, $xlarge 0px 0px 0px);
-    text-align: center;
-    margin: auto;
     @include size($max-content-width 50%);
+    margin: auto;
+    text-align: center;
   }
 }
 
@@ -203,9 +221,9 @@ button {
   color: rgba($color-light, 0.4);
   display: block;
   float: left;
+  font-size: em(20);
   margin-left: $gutter / 2;
   text-align: center;
-  font-size: em(20);
 
   &:hover,
   &.is-selected,
@@ -232,7 +250,7 @@ button {
 
 .section-main {
   @include outer-container;
-  @include pad(default 0);
+  @include pad(default 0 0);
 
   p:first-of-type {
     font-size: em(20);
@@ -252,9 +270,8 @@ button {
     color: $color;
 
     &:hover {
-      color: $color-light;
       background-color: $color;
-      // border-color: $color-light;
+      color: $color-light;
     }
   }
 }
