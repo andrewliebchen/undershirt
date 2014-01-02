@@ -17,6 +17,7 @@ $max-content-width: 740px;
 $font-base: 'avenir next', $helvetica;
 $font-icon: fontastic;
 
+$xsmall: em(12);
 $small:  em(24);
 $medium: em(36);
 $large:  em(48);
@@ -198,10 +199,25 @@ button {
   width: $width;
   padding: 10px;
   font-size: 0.8em;
-  background-color: rgba($color-dark, 0.5);
+  background-color: rgba($color-dark, 0.7);
   line-height: $small;
   text-align: center;
   border-radius: 3px;
+}
+
+.media {
+  @include row();
+
+  .media-image {
+    float: left;
+    margin-right: $xsmall;
+    overflow: hidden;
+
+    img {
+      max-heigth: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 %width-wrapper,
@@ -300,15 +316,14 @@ button {
   background-color: $color-mid;
   color: $footer-color;
 
-  button {
-    $color: darken($color-mid, 20%);
-    @include fill-parent;
-    border-color: $color;
-    color: $color;
+  .media-image {
+    $size: $xlarge;
+    @include size($size);
+    border-radius: $size / 2;
+  }
 
-    &:hover {
-      background-color: $color;
-      color: $color-light;
-    }
+  .media-body {
+    margin-top: em(8);
+    padding: 0;
   }
 }
