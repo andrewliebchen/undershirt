@@ -193,6 +193,54 @@ pre[class*="language-"] {
   src: url("../../fonts/fontastic/undershirt.eot?#iefix") format("embedded-opentype"), url("../../fonts/fontastic/undershirt.woff") format("woff"), url("../../fonts/fontastic/undershirt.ttf") format("truetype"), url("../../fonts/fontastic/undershirt.svg#fontastic") format("svg");
 }
 
+@-webkit-keyframes tooltip-drop {
+  from {
+    -webkit-transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes tooltip-drop {
+  from {
+    -moz-transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    -moz-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-o-keyframes tooltip-drop {
+  from {
+    -o-transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    -o-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes tooltip-drop {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes nav-drop {
   from {
     -webkit-transform: translateY(-3.75em);
@@ -360,6 +408,33 @@ button {
 button:hover {
   background-color: #1dba8f;
   color: #fcfcfc;
+}
+
+[data-title] {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-animation-name: tooltip-drop;
+  -moz-animation-name: tooltip-drop;
+  animation-name: tooltip-drop;
+  -webkit-animation-duration: 0.2s;
+  -moz-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  margin-left: -50px;
+  width: 100px;
+  padding: 10px;
+  font-size: 0.8em;
+  background-color: rgba(31, 19, 19, 0.5);
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 3px;
 }
 
 .width-wrapper {

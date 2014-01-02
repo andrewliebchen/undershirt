@@ -25,6 +25,17 @@ $xlarge: em(60);
 $timeline-width: em(6);
 
 // ANIMATIONS
+@include keyframes(tooltip-drop) {
+  from {
+    @include transform(translateY(-10px));
+    opacity: 0;
+  }
+  to {
+    @include transform(translateY(0));
+    opacity: 1;
+  }
+}
+
 @include keyframes(nav-drop) {
   from {
     @include transform(translateY(-$xlarge));
@@ -171,6 +182,26 @@ button {
     background-color: $color-accent;
     color: $color-light;
   }
+}
+
+[data-title] {
+  position: relative;
+}
+
+.tooltip {
+  $width: 100px;
+  @include position(absolute, 75% 0 0 50%);
+  @include animation-name(tooltip-drop);
+  @include animation-duration(0.2s);
+  @include animation-fill-mode(forwards);
+  margin-left: -($width / 2);
+  width: $width;
+  padding: 10px;
+  font-size: 0.8em;
+  background-color: rgba($color-dark, 0.5);
+  line-height: $small;
+  text-align: center;
+  border-radius: 3px;
 }
 
 %width-wrapper,

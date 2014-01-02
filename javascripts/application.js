@@ -24,11 +24,21 @@
         return $('.section-main').css("margin-top", "0");
       }
     });
-    return $(document).on('click', '[data-toggle]', function(event) {
+    $(document).on('click', '[data-toggle]', function(event) {
       var target;
       target = $($(this).data('toggle'));
       event.preventDefault();
       return target.toggle();
+    });
+    $(document).on('mouseenter', '[data-title]', function(event) {
+      var titleText;
+      titleText = $(this).data('title');
+      event.preventDefault();
+      return $(this).append("<span class='tooltip'>" + titleText + "</span>");
+    });
+    return $(document).on('mouseleave', '[data-title]', function(event) {
+      event.preventDefault();
+      return $(this).find('.tooltip').remove();
     });
   });
 

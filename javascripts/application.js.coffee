@@ -25,3 +25,14 @@ $ ->
     target = $($(@).data('toggle'))
     event.preventDefault()
     target.toggle()
+
+  $(document).on 'mouseenter', '[data-title]', (event) ->
+    titleText = $(@).data('title')
+    event.preventDefault()
+    $(@).append("<span class='tooltip'>#{titleText}</span>")
+
+  $(document).on 'mouseleave', '[data-title]', (event) ->
+    event.preventDefault()
+    $(@).find('.tooltip').remove()
+
+
