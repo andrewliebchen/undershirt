@@ -2,13 +2,14 @@
 @import "grid-settings";
 @import "neat/neat";
 @import "reset";
+@import "prism";
 
 @include font-face(fontastic, '../../fonts/fontastic/undershirt');
 
 // VARIABLES move these
 $color-accent: #1DBA8F;
 $color-dark:   #1F1313;
-$color-mid:    #DDD;
+$color-mid:    lighten($color-dark, 85%);;
 $color-light:  #FCFCFC;
 
 $max-content-width: 740px;
@@ -22,6 +23,16 @@ $large:  em(48);
 $xlarge: em(60);
 
 $timeline-width: em(6);
+
+// ANIMATIONS
+@include keyframes(nav-drop) {
+  from {
+    @include transform(translateY(-$xlarge));
+  }
+  to {
+    @include transform(translateY(0));
+  }
+}
 
 // MIXINS
 @mixin cursor-zoom-in {
@@ -97,6 +108,12 @@ h4 {
 
 p {
   padding-bottom: 1em;
+}
+
+pre[class*="language-"] {
+  margin: 0 0 1em;
+  background-color: $color-mid;
+  border-radius: 3px;
 }
 
 a {
@@ -205,11 +222,21 @@ button {
 .scrolling-header {
   @include position(absolute, 0 0px 0px 0px);
   @include size(100% $xlarge);
+
+  .nav-main {
+    @include animation-name(nav-drop);
+    @include animation-duration(0.3s);
+    @include animation-fill-mode(forwards);
+  }
 }
 
 .section-main {
   @include outer-container;
   @include pad(default 0);
+
+  p:first-of-type {
+    font-size: em(20);
+  }
 }
 
 .footer-main {
@@ -219,14 +246,15 @@ button {
   color: $footer-color;
 
   button {
-    $color: $color-light;
+    $color: darken($color-mid, 20%);
     @include fill-parent;
     border-color: $color;
     color: $color;
 
     &:hover {
-      color: $color-accent;
+      color: $color-light;
       background-color: $color;
+      // border-color: $color-light;
     }
   }
 }
